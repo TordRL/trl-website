@@ -318,6 +318,7 @@ html[data-theme="dark"] .icon-moon { opacity: 1; transform: rotate(0) scale(1); 
 }
 .rotator-text {
   display: inline-block;
+  white-space: nowrap;
   transition: opacity 180ms ease, transform 180ms ease;
 }
 .rotator-period {

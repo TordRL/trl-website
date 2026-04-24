@@ -79,7 +79,8 @@
 
   /* ---------- Hero rotator ---------- */
   const rotator = document.querySelector('.rotator');
-  if (rotator) {
+  const textSpan = rotator ? rotator.querySelector('.rotator-text') : null;
+  if (rotator && textSpan) {
     const phrases = [
       'Microsoft 365',
       'Power Platform',
@@ -87,8 +88,6 @@
       'IT that actually ships'
     ];
     let i = 0;
-    const textSpan = rotator.querySelector('.rotator-text');
-    if (!textSpan) return;
 
     // Lock width to the widest phrase so the page never shifts on swap.
     const ghost = document.createElement('span');

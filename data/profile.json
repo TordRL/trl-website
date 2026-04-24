@@ -1,0 +1,133 @@
+{
+  "_version": "1.0",
+  "_lastUpdated": "2026-04-24",
+  "_note": "Master data file for CV generator and webcruiter export. Edit this to keep everything in sync.",
+
+  "personal": {
+    "name": "Tord Resch Lindaas",
+    "email": "tordrl@proton.me",
+    "phone": "+47 944 36 335",
+    "location": "Billingstad",
+    "title": "IT-konsulent | Microsoft 365 & Power Platform",
+    "availability": "open-to-work",
+    "availabilityLabel": "Open to new roles",
+    "linkedin": "",
+    "github": "",
+    "website": ""
+  },
+
+  "bio": {
+    "short": "IT consultant based in Billingstad with a practical grip on Microsoft 365 — from access management and device administration to building workflows and tools that make everyday work a bit less painful.",
+    "long": "I have a bachelor's degree in IT and information systems from UiA (2017) and have spent most of my career at Norsk Psykologforening, handling everything from Entra ID and access management to Intune, Dynamics CRM, and internal tooling. My approach is practical: reach for the simplest thing that actually solves the problem well."
+  },
+
+  "skills": {
+    "primary": [
+      "Microsoft 365",
+      "Entra ID / Azure AD",
+      "SharePoint & Lists",
+      "Microsoft Intune"
+    ],
+    "platform": [
+      "Dynamics 365 / CRM",
+      "Power Automate",
+      "Power Apps",
+      "Power BI",
+      "Microsoft Teams"
+    ],
+    "delivery": [
+      "IT-support",
+      "Tilgangsstyring",
+      "Prosjektstyring",
+      "Innkjøp og leverandørkontakt",
+      "Intern opplæring",
+      "DevOps (utviklingsbestillinger)"
+    ]
+  },
+
+  "experience": [
+    {
+      "id": "it-vikar-npf-2025",
+      "title": "IT-vikar",
+      "company": "Norsk Psykologforening",
+      "from": "2025-11",
+      "to": null,
+      "current": true,
+      "location": "Oslo",
+      "summary": "IT support, access management, hardware procurement, AV operations, and project coordination. Broad responsibility across all day-to-day IT matters.",
+      "highlights": [
+        "IT support — internt og eksternt",
+        "Administrering og tilgangsstyring i Entra ID",
+        "Innkjøp av teknisk utstyr",
+        "Ansvar for AV og generell drift",
+        "Prosjektstyring og logistikk"
+      ],
+      "keywords": ["it-support", "entra id", "tilgangsstyring", "innkjøp", "prosjektstyring", "microsoft 365"]
+    },
+    {
+      "id": "it-konsulent-npf-2024",
+      "title": "IT-konsulent",
+      "company": "Norsk Psykologforening",
+      "from": "2024-06",
+      "to": "2025-06",
+      "current": false,
+      "location": "Oslo",
+      "summary": "Entra ID administration, vendor relations, DevOps development requests, internal training, and workflow modernisation. Covered for the IT manager during a period of high demand.",
+      "highlights": [
+        "IT-support og Entra ID-administrasjon",
+        "Leverandørkontakt og innkjøp",
+        "Utviklingsbestillinger i DevOps",
+        "Intern opplæring og modernisering av arbeidsflyter",
+        "Vikarierte for IT-ansvarlig"
+      ],
+      "keywords": ["it-support", "entra id", "devops", "opplæring", "arbeidsflyter", "leverandør", "microsoft 365", "dynamics 365"]
+    },
+    {
+      "id": "it-konsulent-npf-2023",
+      "title": "IT-konsulent",
+      "company": "Norsk Psykologforening",
+      "from": "2023-01",
+      "to": "2023-07",
+      "current": false,
+      "location": "Oslo",
+      "summary": "Supported the IT department through a demanding Dynamics CRM transition, taking on IT manager responsibilities to free up capacity for critical system work.",
+      "highlights": [
+        "IT-support under krevende CRM-overgang",
+        "Overtok oppgaver fra IT-ansvarlig",
+        "Dynamics 365 CRM-opplæring og tilpasning"
+      ],
+      "keywords": ["dynamics 365", "CRM", "it-support", "microsoft 365", "prosjekt"]
+    }
+  ],
+
+  "education": [
+    {
+      "id": "uia-bachelor",
+      "degree": "Bachelor i IT og informasjonssystemer",
+      "institution": "Universitetet i Agder (UiA)",
+      "from": "2014-08",
+      "to": "2017-06",
+      "summary": "Software development, requirements analysis, information systems design, programming, and IT project methodology.",
+      "keywords": ["it", "informasjonssystemer", "programmering", "systemdesign", "prosjektarbeid"]
+    }
+  ],
+
+  "certifications": [],
+
+  "languages": [
+    { "language": "Norsk", "level": "Morsmål" },
+    { "language": "Engelsk", "level": "Godt nivå" }
+  ],
+
+  "keywords": {
+    "_note": "Used by generate-cv.py for job matching. Add terms from job listings you're targeting.",
+    "all": [
+      "microsoft 365", "entra id", "azure ad", "sharepoint", "microsoft lists",
+      "dynamics 365", "CRM", "intune", "MDM", "endepunktsadministrasjon",
+      "power automate", "power apps", "power bi", "power platform",
+      "teams", "it-support", "tilgangsstyring", "brukerstøtte",
+      "prosjektstyring", "opplæring", "leverandørkontakt", "devops",
+      "skymigrering", "automatisering", "arbeidsflyter", "digital transformasjon"
+    ]
+  }
+}

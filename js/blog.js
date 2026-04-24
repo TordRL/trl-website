@@ -27,9 +27,16 @@
   }
 
   async function loadIndex() {
-    const res = await fetch(postsIndexUrl(), { cache: 'no-cache' });
-    if (!res.ok) throw new Error(`Failed to load posts (${res.status})`);
-    const data = await res.json();
+    // Prefer the preloaded script-tag data (works on file:// with no server).
+    // Falls back to fetching posts.json when running on a proper server.
+    let data;
+    if (window.BLOG_POSTS && window.BLOG_POSTS.length) {
+      data = window.BLOG_POSTS;
+    } else {
+      const res = await fetch(postsIndexUrl(), { cache: 'no-cache' });
+      if (!res.ok) throw new Error(`Failed to load posts (${res.status})`);
+      data = await res.json();
+    }
     // Sort newest first
     data.sort((a, b) => new Date(b.date) - new Date(a.date));
     return data;

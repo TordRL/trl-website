@@ -24,7 +24,7 @@
       </button>
       <ul class="nav-menu" id="nav-menu">
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
         <li><a href="#cv">CV</a></li>
         <li><a href="blog/index.html">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -43,19 +43,19 @@
     <!-- HOME / HERO -->
     <section class="hero" id="home">
       <div class="container hero-inner">
-        <p class="eyebrow"><span class="dot"></span> Available for new engagements</p>
+        <p class="eyebrow"><span class="dot"></span> Open to new opportunities</p>
         <h1 class="hero-title">
           Hi, I'm <span class="accent">Tord</span>.<br />
-          I build <span class="rotator" aria-live="polite"><span>Power Platform solutions</span></span>.
+          I work with <span class="rotator" aria-live="polite" aria-atomic="true"><span class="rotator-text">Microsoft 365</span><span class="rotator-period">.</span></span>
         </h1>
         <p class="hero-sub">
-          Independent Microsoft consultant helping teams ship real solutions with Power Apps,
-          Power Automate, Copilot Studio, and Dataverse — without writing a line of code where
-          it isn't needed.
+          IT consultant based in Billingstad with a practical grip on Microsoft 365 —
+          from access management and device administration to building workflows and
+          tools that make everyday work a bit less painful.
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#projects">See my work</a>
-          <a class="btn btn-ghost" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#contact">Get in touch <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -70,38 +70,39 @@
         <div class="about-grid">
           <div class="about-text">
             <p>
-              <strong>Placeholder bio.</strong> I'm a Microsoft Power Platform consultant. I partner
-              with organizations to turn messy, manual processes into canvas apps, automated flows,
-              and Copilot-powered experiences that the business can actually own long-term.
+              <strong>IT consultant</strong> based in Billingstad, with a bachelor's degree in
+              IT and information systems from UiA (2017). I've spent most of my career at
+              Norsk Psykologforening, handling everything from Entra ID and access management
+              to Intune, Dynamics CRM, and internal tooling.
             </p>
             <p>
-              My sweet spot is the boring-but-valuable stuff: approvals that should have been
-              automated years ago, spreadsheets that wanted to be Dataverse, SharePoint lists
-              begging for a proper UI. Replace this copy with your own story — how you got into
-              the Power Platform, the kinds of clients you work with, and what you love about
-              the craft.
+              My approach is practical: reach for the simplest thing that actually solves the
+              problem. Microsoft Lists over a custom database when it fits. Power Automate before
+              anyone thinks about writing code. Intune to manage devices in a way that scales.
+              I like taking ownership of the cross-functional stuff others tend to avoid.
             </p>
             <ul class="tag-list" aria-label="What I work on">
-              <li>Power Apps</li>
-              <li>Power Automate</li>
-              <li>Copilot Studio</li>
-              <li>Dataverse</li>
               <li>Microsoft 365</li>
+              <li>Entra ID</li>
+              <li>SharePoint</li>
+              <li>Power Automate</li>
+              <li>Power Apps</li>
+              <li>Intune</li>
             </ul>
           </div>
           <aside class="about-card">
             <dl class="facts">
-              <div><dt>Based in</dt><dd>Somewhere, Earth</dd></div>
-              <div><dt>Currently</dt><dd>Consulting independently</dd></div>
-              <div><dt>Focus</dt><dd>Power Platform & M365</dd></div>
-              <div><dt>Reach me</dt><dd><a href="mailto:tordrl@proton.me">tordrl@proton.me</a></dd></div>
+              <div><dt>Based in</dt><dd>Billingstad</dd></div>
+              <div><dt>Currently</dt><dd>Open to new roles</dd></div>
+              <div><dt>Focus</dt><dd>Microsoft 365 & Power Platform</dd></div>
+              <div><dt>Reach me</dt><dd><a href="#contact">Use the form →</a></dd></div>
             </dl>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS CAROUSEL -->
     <section class="section section-alt" id="projects">
       <div class="container">
         <header class="section-head">
@@ -110,55 +111,26 @@
           <p class="section-lede">A handful of Power Platform solutions I've delivered. Click through for case studies.</p>
         </header>
 
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-thumb" aria-hidden="true">
-              <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="20" y="14" width="36" height="52" rx="4" fill="currentColor" opacity="0.25"/><rect x="26" y="22" width="24" height="4" fill="currentColor" opacity="0.4"/><rect x="26" y="32" width="16" height="4" fill="currentColor" opacity="0.3"/><rect x="26" y="42" width="20" height="4" fill="currentColor" opacity="0.3"/><rect x="70" y="20" width="36" height="8" fill="currentColor" opacity="0.2"/><rect x="70" y="34" width="36" height="8" fill="currentColor" opacity="0.15"/><rect x="70" y="48" width="24" height="8" fill="currentColor" opacity="0.1"/></svg>
+        <div class="carousel-wrapper" id="projects-carousel">
+          <div class="carousel-track-outer">
+            <div class="carousel-track" aria-live="polite">
+              <!-- Project cards injected by main.js from projects/projects.json -->
+              <p class="muted" style="padding:1rem">Loading projects…</p>
             </div>
-            <div class="project-body">
-              <h3>Field Inspection Canvas App</h3>
-              <p>Replaced paper checklists with a Power Apps canvas app used daily by field crews. Photos, GPS, offline support — backed by Dataverse.</p>
-              <ul class="tag-list small">
-                <li>Power Apps</li><li>Dataverse</li><li>Power Automate</li>
-              </ul>
-              <div class="project-links">
-                <a href="projects/sample-project.html">Case study →</a>
-                <a href="#" class="muted-link">Demo ↗</a>
-              </div>
-            </div>
-          </article>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn carousel-btn-prev" aria-label="Previous projects">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel-dots" role="tablist" aria-label="Project slides"></div>
+            <button class="carousel-btn carousel-btn-next" aria-label="Next projects">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
 
-          <article class="project-card">
-            <div class="project-thumb" aria-hidden="true">
-              <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><circle cx="24" cy="24" r="7" fill="currentColor" opacity="0.35"/><circle cx="60" cy="24" r="7" fill="currentColor" opacity="0.35"/><circle cx="96" cy="24" r="7" fill="currentColor" opacity="0.35"/><circle cx="42" cy="56" r="7" fill="currentColor" opacity="0.35"/><circle cx="78" cy="56" r="7" fill="currentColor" opacity="0.35"/><path d="M31 24 L53 24 M67 24 L89 24 M27 30 L38 50 M49 56 L71 56 M83 50 L92 30 M65 30 L45 50" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>
-            </div>
-            <div class="project-body">
-              <h3>Invoice Approval Automation</h3>
-              <p>Multi-stage approval flow with SLA tracking. Cut approval cycle time from 9 days to under 48 hours and eliminated the email chase.</p>
-              <ul class="tag-list small">
-                <li>Power Automate</li><li>SharePoint</li><li>Teams</li>
-              </ul>
-              <div class="project-links">
-                <a href="projects/sample-project.html">Case study →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-thumb" aria-hidden="true">
-              <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="14" y="20" width="40" height="12" rx="6" fill="currentColor" opacity="0.2"/><rect x="66" y="36" width="40" height="12" rx="6" fill="currentColor" opacity="0.3"/><rect x="14" y="52" width="50" height="12" rx="6" fill="currentColor" opacity="0.2"/><circle cx="100" cy="22" r="6" fill="currentColor" opacity="0.4"/></svg>
-            </div>
-            <div class="project-body">
-              <h3>Copilot Studio HR Agent</h3>
-              <p>Internal HR assistant answering policy and leave questions in Teams. Grounded on SharePoint content with escalation to a human agent.</p>
-              <ul class="tag-list small">
-                <li>Copilot Studio</li><li>Dataverse</li><li>Graph API</li>
-              </ul>
-              <div class="project-links">
-                <a href="projects/sample-project.html">Case study →</a>
-              </div>
-            </div>
-          </article>
+        <div class="carousel-footer">
+          <a class="btn btn-ghost" href="projects/index.html">All projects <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -177,69 +149,55 @@
             <h3 class="cv-heading">Work</h3>
             <ol class="timeline">
               <li>
-                <div class="timeline-when">2024 — Present</div>
+                <div class="timeline-when">nov 2025 — nå</div>
                 <div class="timeline-what">
-                  <h4>Independent Power Platform Consultant</h4>
-                  <p>Delivering canvas apps, model-driven apps, automations, and Copilot Studio agents for clients across industries.</p>
+                  <h4>IT-vikar · Norsk Psykologforening</h4>
+                  <p>IT support, access management, hardware procurement, AV operations, and project coordination. Broad responsibility across all day-to-day IT matters.</p>
                 </div>
               </li>
               <li>
-                <div class="timeline-when">2021 — 2024</div>
+                <div class="timeline-when">jun 2024 — jun 2025</div>
                 <div class="timeline-what">
-                  <h4>Senior Power Platform Developer · Previous company</h4>
-                  <p>Led Power Platform adoption and built out the organization's Center of Excellence.</p>
+                  <h4>IT-konsulent · Norsk Psykologforening</h4>
+                  <p>Entra ID administration, vendor relations, DevOps development requests, internal training, and workflow modernisation. Covered for the IT manager during a period of high demand.</p>
                 </div>
               </li>
               <li>
-                <div class="timeline-when">2018 — 2021</div>
+                <div class="timeline-when">jan 2023 — jul 2023</div>
                 <div class="timeline-what">
-                  <h4>Microsoft 365 Specialist · First company</h4>
-                  <p>SharePoint, Teams, and early Power Platform work — where the low-code bug took hold.</p>
+                  <h4>IT-konsulent · Norsk Psykologforening</h4>
+                  <p>Supported the IT department through a demanding Dynamics CRM transition, taking on IT manager responsibilities to free up capacity for critical system work.</p>
                 </div>
               </li>
             </ol>
           </div>
 
           <div class="cv-column">
-            <h3 class="cv-heading">Certifications</h3>
+            <h3 class="cv-heading">Education</h3>
             <ol class="timeline">
               <li>
-                <div class="timeline-when">Microsoft</div>
+                <div class="timeline-when">2014 — 2017</div>
                 <div class="timeline-what">
-                  <h4>PL-900 · Power Platform Fundamentals</h4>
-                  <p>Replace with the specific certifications you hold.</p>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-when">Microsoft</div>
-                <div class="timeline-what">
-                  <h4>PL-200 · Power Platform Functional Consultant</h4>
-                  <p>Designing and configuring Power Platform solutions.</p>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-when">Microsoft</div>
-                <div class="timeline-what">
-                  <h4>PL-400 · Power Platform Developer</h4>
-                  <p>Custom connectors, plugins, and advanced extensibility.</p>
+                  <h4>Bachelor i IT og informasjonssystemer · UiA</h4>
+                  <p>Software development, requirements analysis, information systems design, and IT project methodology.</p>
                 </div>
               </li>
             </ol>
 
             <h3 class="cv-heading">Skills</h3>
             <div class="skills">
-              <span class="chip">Power Apps (Canvas)</span>
-              <span class="chip">Power Apps (Model-driven)</span>
-              <span class="chip">Power Automate</span>
-              <span class="chip">Copilot Studio</span>
-              <span class="chip">Dataverse</span>
-              <span class="chip">Power Fx</span>
-              <span class="chip">SharePoint</span>
-              <span class="chip">Microsoft Teams</span>
               <span class="chip">Microsoft 365</span>
-              <span class="chip">Microsoft Graph</span>
-              <span class="chip">Azure AD / Entra</span>
-              <span class="chip">ALM (Solutions & Pipelines)</span>
+              <span class="chip">Entra ID</span>
+              <span class="chip">SharePoint</span>
+              <span class="chip">Microsoft Lists</span>
+              <span class="chip">Microsoft Intune</span>
+              <span class="chip">Dynamics 365</span>
+              <span class="chip">Power Automate</span>
+              <span class="chip">Power Apps</span>
+              <span class="chip">Power BI</span>
+              <span class="chip">Access Management</span>
+              <span class="chip">IT Support</span>
+              <span class="chip">Project Management</span>
             </div>
           </div>
         </div>
@@ -267,7 +225,7 @@
         <header class="section-head">
           <p class="section-kicker">05 — Contact</p>
           <h2 class="section-title">Start a project</h2>
-          <p class="section-lede">Got a process that needs automating or an app that should have been built yesterday? Drop me a note — <a class="inline-link" href="mailto:tordrl@proton.me">tordrl@proton.me</a> — or use the form.</p>
+          <p class="section-lede">Have a challenge that needs solving or a system that should have been improved yesterday? Use the form below or find me via the links in the footer.</p>
         </header>
 
         <form class="contact-form" id="contact-form" novalidate>
@@ -301,13 +259,15 @@
     <div class="container footer-inner">
       <p>© <span id="year"></span> Tord · Microsoft Power Platform Consultant.</p>
       <ul class="socials" aria-label="Social links">
-        <li><a href="mailto:tordrl@proton.me" aria-label="Email">Email</a></li>
+        <li><a href="#contact" aria-label="Contact">Contact</a></li>
         <li><a href="#" aria-label="GitHub">GitHub</a></li>
         <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
       </ul>
     </div>
   </footer>
 
+  <script src="js/projects-data.js"></script>
+  <script src="blog/posts/blog-data.js"></script>
   <script src="js/main.js" defer></script>
   <script src="js/blog.js" defer></script>
 </body>

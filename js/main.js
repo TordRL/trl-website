@@ -81,27 +81,198 @@
   const rotator = document.querySelector('.rotator');
   if (rotator) {
     const phrases = [
-      'Power Platform solutions',
-      'apps people actually use',
-      'automations that save real hours',
-      'Copilot Studio agents'
+      'Microsoft 365',
+      'Power Platform',
+      'tools that solve real problems',
+      'IT that actually ships'
     ];
     let i = 0;
-    const span = rotator.querySelector('span') || rotator;
+    const textSpan = rotator.querySelector('.rotator-text');
+    if (!textSpan) return;
+
+    // Lock width to the widest phrase so the page never shifts on swap.
+    const ghost = document.createElement('span');
+    ghost.setAttribute('aria-hidden', 'true');
+    ghost.style.cssText = 'visibility:hidden;position:absolute;white-space:nowrap;font:inherit;letter-spacing:inherit;pointer-events:none';
+    rotator.appendChild(ghost);
+    const maxW = Math.max(...phrases.map(p => { ghost.textContent = p; return ghost.offsetWidth; }));
+    rotator.removeChild(ghost);
+    rotator.style.minWidth = maxW + 'px';
+
     setInterval(() => {
       i = (i + 1) % phrases.length;
-      span.style.opacity = '0';
+
+      // Slide up + fade out
+      textSpan.style.opacity = '0';
+      textSpan.style.transform = 'translateY(-7px)';
+
       setTimeout(() => {
-        span.textContent = phrases[i];
-        span.style.opacity = '1';
+        textSpan.textContent = phrases[i];
+        // Snap to below, invisible — no transition
+        textSpan.style.transition = 'none';
+        textSpan.style.transform = 'translateY(7px)';
+        textSpan.style.opacity = '0';
+        // Force reflow so the snap registers before we re-enable transition
+        textSpan.offsetHeight;
+        // Slide up into place + fade in
+        textSpan.style.transition = 'opacity 180ms ease, transform 180ms ease';
+        textSpan.style.opacity = '1';
+        textSpan.style.transform = 'translateY(0)';
       }, 200);
-    }, 2600);
-    span.style.transition = 'opacity 200ms ease';
+    }, 3000);
   }
 
   /* ---------- Footer year ---------- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------- Project Carousel (home page) ---------- */
+  // Renders project cards from projects.json into a sliding carousel
+  const carouselEl = document.getElementById('projects-carousel');
+  if (carouselEl) {
+    const track = carouselEl.querySelector('.carousel-track');
+    const dotsEl = carouselEl.querySelector('.carousel-dots');
+    const btnPrev = carouselEl.querySelector('.carousel-btn-prev');
+    const btnNext = carouselEl.querySelector('.carousel-btn-next');
+
+    let projects = [];
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+    let visibleCount = 3;
+
+    function getVisibleCount() {
+      if (window.innerWidth <= 560) return 1;
+      if (window.innerWidth <= 900) return 2;
+      return 3;
+    }
+
+    function buildSvgThumb(index) {
+      const svgs = [
+        `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="20" y="14" width="36" height="52" rx="4" fill="currentColor" opacity="0.25"/><rect x="26" y="22" width="24" height="4" fill="currentColor" opacity="0.4"/><rect x="26" y="32" width="16" height="4" fill="currentColor" opacity="0.3"/><rect x="26" y="42" width="20" height="4" fill="currentColor" opacity="0.3"/><rect x="70" y="20" width="36" height="8" fill="currentColor" opacity="0.2"/><rect x="70" y="34" width="36" height="8" fill="currentColor" opacity="0.15"/><rect x="70" y="48" width="24" height="8" fill="currentColor" opacity="0.1"/></svg>`,
+        `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><circle cx="24" cy="24" r="7" fill="currentColor" opacity="0.35"/><circle cx="60" cy="24" r="7" fill="currentColor" opacity="0.35"/><circle cx="96" cy="24" r="7" fill="currentColor" opacity="0.35"/><circle cx="42" cy="56" r="7" fill="currentColor" opacity="0.35"/><circle cx="78" cy="56" r="7" fill="currentColor" opacity="0.35"/><path d="M31 24 L53 24 M67 24 L89 24 M27 30 L38 50 M49 56 L71 56 M83 50 L92 30 M65 30 L45 50" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>`,
+        `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="14" y="20" width="40" height="12" rx="6" fill="currentColor" opacity="0.2"/><rect x="66" y="36" width="40" height="12" rx="6" fill="currentColor" opacity="0.3"/><rect x="14" y="52" width="50" height="12" rx="6" fill="currentColor" opacity="0.2"/><circle cx="100" cy="22" r="6" fill="currentColor" opacity="0.4"/></svg>`,
+        `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="10" y="30" width="20" height="40" rx="3" fill="currentColor" opacity="0.3"/><rect x="36" y="18" width="20" height="52" rx="3" fill="currentColor" opacity="0.25"/><rect x="62" y="24" width="20" height="46" rx="3" fill="currentColor" opacity="0.2"/><rect x="88" y="10" width="20" height="60" rx="3" fill="currentColor" opacity="0.35"/></svg>`
+      ];
+      return svgs[index % svgs.length];
+    }
+
+    function renderCard(p, idx) {
+      const tags = (p.tags || []).slice(0, 4).map(t => `<li>${t}</li>`).join('');
+      const meta = [p.role, p.period].filter(Boolean).join('  ·  ');
+      const excerpt = p.excerpt || p.summary || '';
+      return `
+        <article class="project-card reveal">
+          <div class="project-thumb" aria-hidden="true">${buildSvgThumb(idx)}</div>
+          <div class="project-body">
+            <h3>${p.title}</h3>
+            ${meta ? `<p class="project-card-meta">${meta}</p>` : ''}
+            <p>${excerpt}</p>
+            <ul class="tag-list small">${tags}</ul>
+            <div class="project-links">
+              <a href="projects/index.html">Se alle prosjekter →</a>
+            </div>
+          </div>
+        </article>`;
+    }
+
+    function renderDots() {
+      if (!dotsEl) return;
+      const total = projects.length;
+      const steps = Math.max(1, total - visibleCount + 1);
+      dotsEl.innerHTML = '';
+      for (let i = 0; i < steps; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+        btn.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        btn.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(btn);
+      }
+    }
+
+    function updateDots() {
+      dotsEl && dotsEl.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function updateButtons() {
+      const maxIndex = Math.max(0, projects.length - visibleCount);
+      if (btnPrev) btnPrev.disabled = currentIndex === 0;
+      if (btnNext) btnNext.disabled = currentIndex >= maxIndex;
+    }
+
+    function goTo(idx) {
+      const maxIndex = Math.max(0, projects.length - visibleCount);
+      currentIndex = Math.max(0, Math.min(idx, maxIndex));
+      const cardW = track.querySelector('.project-card');
+      if (!cardW) return;
+      const gap = 20; // 1.25rem ≈ 20px
+      const cardWidth = cardW.offsetWidth + gap;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      updateDots();
+      updateButtons();
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayTimer = setInterval(() => {
+        const maxIndex = Math.max(0, projects.length - visibleCount);
+        goTo(currentIndex >= maxIndex ? 0 : currentIndex + 1);
+      }, 5000);
+    }
+    function stopAutoPlay() {
+      if (autoPlayTimer) clearInterval(autoPlayTimer);
+    }
+
+    function init(data) {
+      projects = data;
+      visibleCount = getVisibleCount();
+      track.innerHTML = data.map((p, i) => renderCard(p, i)).join('');
+
+      // kick off scroll reveal for newly injected cards
+      const newCards = track.querySelectorAll('.project-card.reveal');
+      if ('IntersectionObserver' in window) {
+        const io2 = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io2.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+        newCards.forEach(el => io2.observe(el));
+      } else {
+        newCards.forEach(el => el.classList.add('is-visible'));
+      }
+
+      renderDots();
+      updateButtons();
+      goTo(0);
+      startAutoPlay();
+
+      carouselEl.addEventListener('mouseenter', stopAutoPlay);
+      carouselEl.addEventListener('mouseleave', startAutoPlay);
+      carouselEl.addEventListener('focusin', stopAutoPlay);
+      carouselEl.addEventListener('focusout', startAutoPlay);
+
+      if (btnPrev) btnPrev.addEventListener('click', () => { goTo(currentIndex - 1); startAutoPlay(); });
+      if (btnNext) btnNext.addEventListener('click', () => { goTo(currentIndex + 1); startAutoPlay(); });
+
+      window.addEventListener('resize', () => {
+        const newVisible = getVisibleCount();
+        if (newVisible !== visibleCount) {
+          visibleCount = newVisible;
+          renderDots();
+          goTo(Math.min(currentIndex, Math.max(0, projects.length - visibleCount)));
+        } else {
+          goTo(currentIndex); // recalc pixel offset
+        }
+      });
+    }
+
+    // Data is loaded via <script src="js/projects-data.js"> — no fetch needed,
+    // works with file:// and any server without CORS issues.
+    if (window.PROJECTS_DATA && window.PROJECTS_DATA.length) {
+      init(window.PROJECTS_DATA);
+    } else {
+      track.innerHTML = '<p class="muted" style="padding:1rem">No projects found — check js/projects-data.js is loaded.</p>';
+    }
+  }
 
   /* ---------- Contact form ---------- */
   const form = document.getElementById('contact-form');

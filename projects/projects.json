@@ -1,0 +1,171 @@
+{
+  "_version": "1.0",
+  "_lastUpdated": "2026-04-24",
+  "_note": "Master project list. Each project is self-contained and structured for easy AI parsing, webcruiter export, and website rendering. Add new projects here — the website and CV generator will pick them up automatically.",
+
+  "projects": [
+    {
+      "id": "field-inspection-canvas-app",
+      "title": "Field Inspection Canvas App",
+      "slug": "field-inspection-canvas-app",
+      "featured": true,
+      "year": 2025,
+      "status": "delivered",
+      "role": "Lead Power Platform Consultant",
+      "clientType": "Facilities Management",
+      "clientSize": "Mid-market (~80 field technicians)",
+      "duration": null,
+      "teamSize": null,
+
+      "summary": "Replaced paper-based safety and equipment inspection checklists with a mobile-first Power Apps canvas app. Photos, GPS, offline support — all backed by Dataverse.",
+
+      "problem": "Inspections were paper-based. Photos lived on technicians' phones. Reports were typed up back at the office the next day, and urgent findings slipped through. The back-office team spent ~15 hours per week chasing missing forms and re-keying data into SharePoint lists.",
+
+      "solution": "Designed and built a mobile-first canvas app with offline support so field crews could work on sites with poor signal. Dataverse provides the structured data backbone. Power Automate routes high-severity findings to the duty manager within minutes via Teams notifications. A Power BI dashboard gives leadership live site-wide trends.",
+
+      "technologies": [
+        "Power Apps (Canvas)",
+        "Dataverse",
+        "Power Automate",
+        "Power BI",
+        "SharePoint",
+        "ALM Pipelines"
+      ],
+
+      "tags": ["Power Apps", "Dataverse", "Power Automate", "Power BI", "Mobile", "Offline", "Field Service"],
+
+      "impact": [
+        "Inspection cycle time: 24 hours → under 15 minutes from completion to report",
+        "Back-office rework: ~15 hrs/week → near zero",
+        "100% audit trail on safety-critical findings with SLA tracking",
+        "Client team fully self-sufficient after single handover workshop"
+      ],
+
+      "impactMetrics": {
+        "timeReduction": "94%",
+        "effortSavedPerWeek": "15 hours"
+      },
+
+      "keywords": [
+        "canvas app", "offline", "field service", "mobile", "inspection", "safety",
+        "dataverse", "power automate", "power bi", "automation", "tablets",
+        "facilities", "compliance", "audit trail", "ALM"
+      ],
+
+      "testimonial": {
+        "quote": "We stopped losing reports overnight. The Teams notification the day we went live pinged three urgent findings that would have waited until morning.",
+        "author": "Operations Manager"
+      },
+
+      "caseStudyUrl": "field-inspection-canvas-app.html",
+      "liveUrl": null,
+      "imageType": "svg-placeholder"
+    },
+
+    {
+      "id": "invoice-approval-automation",
+      "title": "Invoice Approval Automation",
+      "slug": "invoice-approval-automation",
+      "featured": true,
+      "year": 2024,
+      "status": "delivered",
+      "role": "Power Platform Consultant",
+      "clientType": "Professional Services",
+      "clientSize": null,
+      "duration": null,
+      "teamSize": null,
+
+      "summary": "Multi-stage invoice approval flow with SLA tracking. Cut approval cycle time from 9 days to under 48 hours and eliminated the email chase entirely.",
+
+      "problem": "Invoice approvals ran over email with no visibility, no SLA enforcement, and constant chasing. Average cycle time was 9 days — unacceptable for supplier relationships and cash flow forecasting.",
+
+      "solution": "Built a Power Automate cloud flow with multi-stage approval logic, automatic escalation when SLAs are breached, and full audit history in SharePoint. Approvers receive adaptive cards directly in Teams — one click to approve, reject, or request information.",
+
+      "technologies": [
+        "Power Automate",
+        "SharePoint",
+        "Microsoft Teams",
+        "Adaptive Cards"
+      ],
+
+      "tags": ["Power Automate", "SharePoint", "Teams", "Approvals", "Finance", "SLA"],
+
+      "impact": [
+        "Approval cycle time: 9 days → under 48 hours",
+        "Eliminated manual email chasing entirely",
+        "Full audit trail with timestamped approval history",
+        "SLA breach alerts escalate automatically to finance manager"
+      ],
+
+      "impactMetrics": {
+        "timeReduction": "78%",
+        "cycleTimeBefore": "9 days",
+        "cycleTimeAfter": "48 hours"
+      },
+
+      "keywords": [
+        "approval", "workflow", "power automate", "sharepoint", "teams", "adaptive cards",
+        "finance", "invoice", "SLA", "escalation", "automation", "email", "notifications"
+      ],
+
+      "testimonial": null,
+
+      "caseStudyUrl": "sample-project.html",
+      "liveUrl": null,
+      "imageType": "svg-placeholder"
+    },
+
+    {
+      "id": "copilot-studio-hr-agent",
+      "title": "Copilot Studio HR Agent",
+      "slug": "copilot-studio-hr-agent",
+      "featured": true,
+      "year": 2025,
+      "status": "delivered",
+      "role": "Power Platform Consultant",
+      "clientType": "Corporate — Internal IT / HR",
+      "clientSize": null,
+      "duration": null,
+      "teamSize": null,
+
+      "summary": "Internal HR assistant answering policy and leave questions in Teams. Grounded on SharePoint content with escalation to a human agent when needed.",
+
+      "problem": "HR team fielded hundreds of repetitive questions per month about leave policies, onboarding, benefits, and expense procedures — all answered by digging through a SharePoint document library with poor search.",
+
+      "solution": "Built a Copilot Studio agent grounded on the organisation's SharePoint HR content. The agent handles Q&A, escalates unresolved queries to a live HR agent via Omnichannel, and logs all interactions in Dataverse for trend analysis. Deployed natively in Microsoft Teams.",
+
+      "technologies": [
+        "Copilot Studio",
+        "Dataverse",
+        "SharePoint",
+        "Microsoft Teams",
+        "Microsoft Graph API"
+      ],
+
+      "tags": ["Copilot Studio", "AI", "Dataverse", "SharePoint", "Teams", "HR", "Chatbot"],
+
+      "impact": [
+        "Deflected ~60% of repetitive HR queries from human agents",
+        "Average query resolution time: days → seconds for covered topics",
+        "HR team freed to focus on complex, high-value cases",
+        "Full conversation log for compliance and continuous improvement"
+      ],
+
+      "impactMetrics": {
+        "deflectionRate": "60%"
+      },
+
+      "keywords": [
+        "copilot studio", "virtual agent", "chatbot", "AI", "generative AI", "NLP",
+        "sharepoint", "grounding", "knowledge base", "HR", "teams", "dataverse",
+        "graph api", "escalation", "omnichannel", "customer service"
+      ],
+
+      "testimonial": null,
+
+      "caseStudyUrl": "sample-project.html",
+      "liveUrl": null,
+      "imageType": "svg-placeholder"
+    }
+  ]
+}

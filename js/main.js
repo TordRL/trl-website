@@ -336,12 +336,34 @@
         return;
       }
 
-      const subject = encodeURIComponent('Contact from ' + name.value.trim());
-      const body = encodeURIComponent(message.value.trim() + '\n\n— ' + name.value.trim() + ' (' + email.value.trim() + ')');
-      window.location.href = 'mailto:tordrl@proton.me?subject=' + subject + '&body=' + body;
+      const submitBtn = form.querySelector('[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
 
-      status.textContent = 'Opening your email client…';
-      status.classList.add('ok');
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+        .then(res => {
+          if (res.ok) {
+            status.textContent = 'Message sent — I\'ll be in touch soon.';
+            status.classList.add('ok');
+            form.reset();
+          } else {
+            return res.json().then(data => {
+              throw new Error(data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong.');
+            });
+          }
+        })
+        .catch(err => {
+          status.textContent = err.message || 'Something went wrong. Try emailing me directly.';
+          status.classList.add('err');
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send message';
+        });
     });
   }
 

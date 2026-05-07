@@ -1,28 +1,28 @@
 ---
-title: Power Apps / Power BI — KPI-applikasjon
-role: Selvstendig prosjekt
-period: Høst 2024
-tags: [Power Apps, Power BI, Microsoft 365]
+title: Power Apps and Power BI — department dashboard template
+role: Self-initiated learning project
+period: Autumn 2024
+tags: [Power Apps, Power BI, SharePoint, Microsoft 365]
 featured: true
 year: 2024
 status: delivered
 sort: 25
-keywords: [power apps, power bi, KPI, dashboard, rapportering, canvas app, mal, avdeling, organisasjon, microsoft 365]
+keywords: [power apps, power bi, KPI, dashboard, reporting, canvas app, template, sharepoint, galleries, forms, connectors, microsoft 365]
 ---
 
-Høsten 2024 brukte jeg en god del fritid på å sette meg grundig inn i Power Platform — med særlig fokus på Power Apps for økt kompleksitet utover enkle flyter.
+In the autumn of 2024 I spent a fair amount of my own time getting properly into Power Platform — with a particular focus on Power Apps for cases more involved than a basic flow.
 
-Resultatet ble en mal-applikasjon der man kan plugge inn KPI-data eller koble til Power BI-rapporter, med separate sider per avdeling og en overordnet side for hele organisasjonen.
+The result was a template application where KPI or key-figure data can be plugged in per department, with embedded Power BI reports and a roll-up landing page for organisation-wide data. SharePoint as the data source.
 
-**Tilnærming:**
+**Approach:**
 
-- Satte meg inn i canvas-arkitektur og datakildeintegrasjon i Power Apps
-- Designet en fleksibel mal som kan tilpasses ulike organisasjoners struktur
-- Integrerte Power BI-rapporter direkte i applikasjonen
-- Bygget separate visninger per avdeling med en felles landingsside for ledernivå
+- Got hands-on with canvas architecture and data-source integration in Power Apps
+- Worked through galleries, forms, and connectors in earnest, beyond the simple form-on-list pattern
+- Designed the structure so a new department is a new sub-page, not a rebuild
+- Embedded Power BI reports directly inside the app
 
-**Resultater:**
+**Results:**
 
-- En gjenbrukbar mal for KPI- og rapportvisualisering i Power Apps
-- Økt forståelse for Power Apps som utviklingsverktøy utover enkle skjemaer
-- Grunnlag for videre prosjekter og mer avansert bruk av Power Platform
+- A reusable template for KPI and report visualisation in Power Apps
+- A much sharper feel for Power Apps as a development tool, beyond simple forms
+- A foundation for further projects and more advanced Power Platform work

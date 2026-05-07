@@ -21,8 +21,8 @@
       `<li><button class="filter-btn filter-tag" data-filter="${t.toLowerCase()}">${t}</button></li>`
     ).join('');
     const roleLine = [
-      p.role   ? `<span><strong>Rolle:</strong> ${escHtml(p.role)}</span>`   : '',
-      p.period ? `<span><strong>Periode:</strong> ${escHtml(p.period)}</span>` : ''
+      p.role   ? `<span><strong>Role:</strong> ${escHtml(p.role)}</span>`   : '',
+      p.period ? `<span><strong>Period:</strong> ${escHtml(p.period)}</span>` : ''
     ].filter(Boolean).join('<span class="project-meta-sep" aria-hidden="true"> · </span>');
 
     return `
@@ -58,7 +58,7 @@
 
     const allBtn = document.createElement('button');
     allBtn.className = 'filter-btn active';
-    allBtn.textContent = `Alle (${projects.length})`;
+    allBtn.textContent = `All (${projects.length})`;
     allBtn.dataset.filter = 'all';
     filterBar.appendChild(allBtn);
 
@@ -122,7 +122,7 @@
       return renderEntry(p) + sep;
     }).join('');
 
-    list.innerHTML = entriesHtml + '<p class="projects-empty muted" style="display:none">Ingen prosjekter matcher dette filteret.</p>';
+    list.innerHTML = entriesHtml + '<p class="projects-empty muted" style="display:none">No projects match this filter.</p>';
 
     buildFilterBar(projects);
 
@@ -141,7 +141,7 @@
   if (window.PROJECTS_DATA && window.PROJECTS_DATA.length) {
     init(window.PROJECTS_DATA);
   } else {
-    list.innerHTML = '<p class="muted">Ingen prosjekter funnet — sjekk at js/projects-data.js er lastet.</p>';
+    list.innerHTML = '<p class="muted">No projects found — check that js/projects-data.js is loaded.</p>';
   }
 
 })();

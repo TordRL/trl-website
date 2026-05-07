@@ -1,14 +1,14 @@
 {
-  "_version": "1.0",
-  "_lastUpdated": "2026-04-24",
-  "_note": "Master data file for CV generator and webcruiter export. Edit this to keep everything in sync.",
+  "_version": "1.1",
+  "_lastUpdated": "2026-05-07",
+  "_note": "Master data file for CV generator and webcruiter export. Edit this to keep everything in sync. Aligned with CV v4.",
 
   "personal": {
     "name": "Tord Resch Lindaas",
     "email": "tordrl@proton.me",
     "phone": "+47 944 36 335",
     "location": "Billingstad",
-    "title": "IT-konsulent | Microsoft 365 & Power Platform",
+    "title": "IT-konsulent | Modern Workplace & Power Platform",
     "availability": "open-to-work",
     "availabilityLabel": "Open to new roles",
     "linkedin": "",
@@ -17,31 +17,47 @@
   },
 
   "bio": {
-    "short": "IT consultant based in Billingstad with a practical grip on Microsoft 365 — from access management and device administration to building workflows and tools that make everyday work a bit less painful.",
-    "long": "I have a bachelor's degree in IT and information systems from UiA (2017) and have spent most of my career at Norsk Psykologforening, handling everything from Entra ID and access management to Intune, Dynamics CRM, and internal tooling. My approach is practical: reach for the simplest thing that actually solves the problem well."
+    "short": "IT consultant with hands-on experience across the Microsoft stack — Microsoft 365, Entra ID, Intune, Dynamics 365, and Power Platform. I focus on workplace modernisation and building systems that move organisations off Excel and personal inboxes.",
+    "long": "IT-konsulent med solid erfaring fra Microsoft-økosystemet, med tyngde på Microsoft 365, Entra ID, Intune, Dynamics 365 og Power Platform. Mest interessert i systemarbeid og modernisering av arbeidsplassen, og har drevet flere slike prosjekter selvstendig fra idé til produksjon. Har bidratt til å systematisere arbeidsflyter i en organisasjon som har vokst ut av Excel og personlige eposter, gjennom løsninger som modulært ticketsystem i SharePoint og Power Platform, endpoint-migrering til Intune og automatiserte saksbehandlingsprosesser."
   },
 
   "skills": {
+    "_groupLabels": {
+      "primary": "Microsoft 365 & identitet",
+      "platform": "Power Platform",
+      "delivery": "CRM, drift & leveranse",
+      "adjacent": "Arbeidsmetodikk"
+    },
     "primary": [
       "Microsoft 365",
       "Entra ID / Azure AD",
-      "SharePoint & Lists",
-      "Microsoft Intune"
+      "Exchange Online",
+      "SharePoint Online",
+      "Microsoft Teams",
+      "Microsoft Intune",
+      "Windows-administrasjon"
     ],
     "platform": [
-      "Dynamics 365 / CRM",
-      "Power Automate",
-      "Power Apps",
+      "Power Apps (canvas)",
+      "Power Automate (cloud flows)",
       "Power BI",
-      "Microsoft Teams"
+      "Microsoft Lists",
+      "Microsoft Forms"
     ],
     "delivery": [
-      "IT-support",
+      "Dynamics 365 (utgående & sanntidsmarkedsføring)",
+      "Azure DevOps",
+      "IT-support (1.- og 2.-linje)",
       "Tilgangsstyring",
-      "Prosjektstyring",
+      "Prosjektstyring og logistikk",
       "Innkjøp og leverandørkontakt",
-      "Intern opplæring",
-      "DevOps (utviklingsbestillinger)"
+      "Intern opplæring"
+    ],
+    "adjacent": [
+      "ITIL-tilnærming (hendelse, problem, endring)",
+      "Prosessdokumentasjon",
+      "Enkel arkitektur og vedlikeholdbare løsninger",
+      "Rask til nye systemer og verktøy"
     ]
   },
 
@@ -54,49 +70,63 @@
       "to": null,
       "current": true,
       "location": "Oslo",
-      "summary": "IT support, access management, hardware procurement, AV operations, and project coordination. Broad responsibility across all day-to-day IT matters.",
+      "summary": "Operational responsibility for IT, AV, and general technical operations in the building. Continued development of internal systems including the modular case-management system in SharePoint and Power Platform.",
       "highlights": [
-        "IT support — internt og eksternt",
-        "Administrering og tilgangsstyring i Entra ID",
-        "Innkjøp av teknisk utstyr",
-        "Ansvar for AV og generell drift",
-        "Prosjektstyring og logistikk"
+        "Driftsansvar for IT, AV og generell teknisk drift i bygget",
+        "Tilgangsstyring i Entra ID, innkjøp og leverandøroppfølging",
+        "Videreutvikler interne systemer og automatiseringer, bl.a. det modulære saksbehandlingssystemet i SharePoint og Power Platform",
+        "Prosjektstyring og logistikk for IT-relaterte initiativer på tvers av avdelinger"
       ],
-      "keywords": ["it-support", "entra id", "tilgangsstyring", "innkjøp", "prosjektstyring", "microsoft 365"]
+      "keywords": ["it-support", "entra id", "tilgangsstyring", "innkjøp", "prosjektstyring", "microsoft 365", "sharepoint", "power platform", "automatisering"]
     },
     {
       "id": "it-konsulent-npf-2024",
-      "title": "IT-konsulent",
+      "title": "IT-konsulent (vikariat)",
       "company": "Norsk Psykologforening",
       "from": "2024-06",
       "to": "2025-06",
       "current": false,
       "location": "Oslo",
-      "summary": "Entra ID administration, vendor relations, DevOps development requests, internal training, and workflow modernisation. Covered for the IT manager during a period of high demand.",
+      "summary": "Stood in for the IT manager with full operational responsibility. Drove several modernisation projects independently — GPO to Intune migration and a new SharePoint-based case-management system among them.",
       "highlights": [
-        "IT-support og Entra ID-administrasjon",
-        "Leverandørkontakt og innkjøp",
-        "Utviklingsbestillinger i DevOps",
-        "Intern opplæring og modernisering av arbeidsflyter",
-        "Vikarierte for IT-ansvarlig"
+        "Vikarierte for IT-ansvarlig med fullt operativt ansvar for IT-drift, tilgangsstyring i Entra ID, leverandørkontakt og bestillinger i Azure DevOps",
+        "Drev flere moderniseringsprosjekter selvstendig, bl.a. migrering fra GPO til Intune og utvikling av nytt saksbehandlingssystem i SharePoint",
+        "Sto for intern opplæring av superbrukere i forbindelse med Microsofts overgang fra utgående til sanntidsmarkedsføring i Dynamics 365",
+        "Håndterte løpende brukerstøtte (1.- og 2.-linje) som en del av det operative ansvaret"
       ],
-      "keywords": ["it-support", "entra id", "devops", "opplæring", "arbeidsflyter", "leverandør", "microsoft 365", "dynamics 365"]
+      "keywords": ["it-support", "entra id", "intune", "sharepoint", "devops", "opplæring", "arbeidsflyter", "leverandør", "microsoft 365", "dynamics 365", "GPO", "modernisering"]
     },
     {
       "id": "it-konsulent-npf-2023",
-      "title": "IT-konsulent",
+      "title": "IT-konsulent (vikariat)",
       "company": "Norsk Psykologforening",
       "from": "2023-01",
       "to": "2023-07",
       "current": false,
       "location": "Oslo",
-      "summary": "Supported the IT department through a demanding Dynamics CRM transition, taking on IT manager responsibilities to free up capacity for critical system work.",
+      "summary": "Reinforced the IT department through a demanding period after the move to Dynamics 365 CRM, freeing the IT manager to focus on strategic work.",
       "highlights": [
-        "IT-support under krevende CRM-overgang",
-        "Overtok oppgaver fra IT-ansvarlig",
-        "Dynamics 365 CRM-opplæring og tilpasning"
+        "Forsterket IT-avdelingen i en krevende periode etter overgang til Dynamics 365 CRM",
+        "Avlastet IT-ansvarlig slik at han kunne fokusere på strategiske områder",
+        "Tok eierskap til løpende drift og forbedringsoppgaver i en travel periode"
       ],
-      "keywords": ["dynamics 365", "CRM", "it-support", "microsoft 365", "prosjekt"]
+      "keywords": ["dynamics 365", "CRM", "it-support", "microsoft 365", "drift"]
+    },
+    {
+      "id": "earlier-2018-2022",
+      "title": "Tidligere erfaring",
+      "company": "Viking Arm · Lappeliten · Schibsted",
+      "from": "2018-01",
+      "to": "2022-12",
+      "current": false,
+      "location": "",
+      "summary": "Earlier roles outside IT — production, print, and overnight distribution.",
+      "highlights": [
+        "Viking Arm (2022) — ekstrahjelp i produksjon",
+        "Lappeliten (2019–2020) — trykkerimedarbeider, maskindrift og logistikk",
+        "Schibsted (2018–2019) — morgenbud, distribusjon på nattskift"
+      ],
+      "keywords": ["produksjon", "logistikk", "distribusjon"]
     }
   ],
 
@@ -107,27 +137,53 @@
       "institution": "Universitetet i Agder (UiA)",
       "from": "2014-08",
       "to": "2017-06",
-      "summary": "Software development, requirements analysis, information systems design, programming, and IT project methodology.",
+      "summary": "Linjen vektla programvareutvikling, analyse av brukerbehov, design av informasjonssystemer, programmering og prosjektarbeid — både individuelt og i gruppe. Et solid metodisk grunnlag for hvordan IT-prosjekter drives i praksis.",
       "keywords": ["it", "informasjonssystemer", "programmering", "systemdesign", "prosjektarbeid"]
+    },
+    {
+      "id": "rud-vgs",
+      "degree": "Studiekompetanse",
+      "institution": "Rud videregående skole",
+      "from": "2011-08",
+      "to": "2014-06",
+      "summary": "To år elektrofag etterfulgt av ett år påbygg til generell studiekompetanse.",
+      "keywords": ["elektrofag", "studiekompetanse"]
     }
   ],
 
   "certifications": [],
 
   "languages": [
-    { "language": "Norsk", "level": "Morsmål" },
-    { "language": "Engelsk", "level": "Godt nivå" }
+    { "language": "Norsk", "level": "Morsmål — meget godt skriftlig og muntlig" },
+    { "language": "Engelsk", "level": "Godt nivå skriftlig og muntlig" }
+  ],
+
+  "interests": [
+    {
+      "title": "Digitality X, Stavanger 2017",
+      "description": "Frivillig turneringsadministrator."
+    },
+    {
+      "title": "Gaming",
+      "description": "Fast spillegruppe gjennom flere år. En god arena for organisasjon, kommunikasjon og felles problemløsning under press."
+    },
+    {
+      "title": "Trening",
+      "description": "Styrketrening; setter pris på den langsiktige progresjonen."
+    }
   ],
 
   "keywords": {
     "_note": "Used by generate-cv.py for job matching. Add terms from job listings you're targeting.",
     "all": [
-      "microsoft 365", "entra id", "azure ad", "sharepoint", "microsoft lists",
-      "dynamics 365", "CRM", "intune", "MDM", "endepunktsadministrasjon",
-      "power automate", "power apps", "power bi", "power platform",
-      "teams", "it-support", "tilgangsstyring", "brukerstøtte",
-      "prosjektstyring", "opplæring", "leverandørkontakt", "devops",
-      "skymigrering", "automatisering", "arbeidsflyter", "digital transformasjon"
+      "microsoft 365", "entra id", "azure ad", "sharepoint", "microsoft lists", "microsoft forms",
+      "dynamics 365", "CRM", "intune", "MDM", "endepunktsadministrasjon", "endpoint",
+      "power automate", "power apps", "power bi", "power platform", "canvas app",
+      "teams", "exchange online", "windows-administrasjon",
+      "it-support", "tilgangsstyring", "brukerstøtte", "1.-linje", "2.-linje",
+      "prosjektstyring", "opplæring", "leverandørkontakt", "innkjøp", "azure devops",
+      "skymigrering", "automatisering", "arbeidsflyter", "digital transformasjon",
+      "modern workplace", "modernisering", "ITIL", "saksbehandling", "ticketsystem"
     ]
   }
 }

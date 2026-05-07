@@ -1,28 +1,28 @@
 ---
-title: Arbeidsflyter — sanntidsmarkedsføring
-role: IT-konsulent / Intern kursleder
+title: Dynamics 365 — real-time marketing transition
+role: IT Consultant / Internal Trainer
 period: 2024
-tags: [Power Automate, Microsoft 365, Opplæring]
+tags: [Dynamics 365, Power Automate, Microsoft 365, Training]
 featured: true
 year: 2024
 status: delivered
 sort: 20
-keywords: [power automate, real-time marketing, dynamics, marketing, opplæring, arbeidsflyter, automatisering, microsoft 365]
+keywords: [dynamics 365, power automate, real-time marketing, outbound marketing, marketing, training, workflows, automation, microsoft 365, knowledge transfer]
 ---
 
-Da Microsoft i 2024 besluttet å avvikle utgående markedsføring til fordel for sanntidsmarkedsføring, fikk jeg ansvar for intern opplæring av nøkkelpersoner i organisasjonen.
+When Microsoft announced in 2024 that it was retiring outbound marketing in favour of real-time marketing, I took on responsibility for getting our key users ready for the switch.
 
-Målet var å være i forkant av en kritisk plattformendring — og å sikre at foreningen på sikt kunne forvalte, tilpasse og videreutvikle løsningene selv, uten å være avhengig av ekstern bistand for hver justering.
+The point was to stay ahead of a critical platform change — and just as importantly, to make sure the organisation could own, adjust, and extend the solutions itself afterwards, without leaning on outside help for every adjustment.
 
-**Tilnærming:**
+**Approach:**
 
-- Kartla hvilke arbeidsflyter og kampanjer som ville bli berørt av overgangen
-- Utarbeidet intern opplæringsplan tilpasset ulike brukernivåer
-- Gjennomførte praktisk opplæring av nøkkelpersoner i det nye grensesnittet
-- Dokumenterte prosesser og løsninger for fremtidig vedlikehold
+- Mapped the workflows and campaigns affected by the move
+- Built an internal training plan focused on 1:1 sessions with the super-user in their own subject area
+- Did the bulk of the technical setup myself, but built the solution alongside the super-user so the knowledge stayed in the organisation
+- Documented processes and configurations for ongoing maintenance
 
-**Resultater:**
+**Results:**
 
-- Organisasjonen var forberedt før den kritiske overgangsfristen
-- Nøkkelpersoner ble selvstendige i sanntidsmarkedsføring
-- Redusert avhengighet av ekstern hjelp for løpende tilpasninger
+- The organisation was prepared well before the cutover deadline
+- The super-user became self-sufficient in real-time marketing and now adjusts the solutions independently
+- Reduced reliance on external help for day-to-day changes

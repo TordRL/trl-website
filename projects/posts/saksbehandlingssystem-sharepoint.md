@@ -1,29 +1,31 @@
 ---
-title: Saksbehandlingssystem i SharePoint
-role: IT-konsulent / Utvikler
-period: Sommer 2025
-tags: [SharePoint, Microsoft Lists, Microsoft 365]
+title: Case management system for weekly department meetings
+role: IT Consultant / Developer
+period: Summer 2025
+tags: [SharePoint, Microsoft Lists, Power Automate, Microsoft 365]
 featured: true
 year: 2025
 status: delivered
 sort: 15
-keywords: [sharepoint, microsoft lists, saksbehandling, excel, modernisering, microsoft 365, workflow, løsning, lavterskel]
+keywords: [sharepoint, microsoft lists, power automate, case management, excel, modernisation, microsoft 365, workflow, low-code, notifications]
 ---
 
-Sommeren 2025 utviklet jeg et saksbehandlingssystem i SharePoint for å forenkle håndteringen av saker på ukentlige møter i avdelingen.
+In the summer of 2025 I replaced a tangle of ageing Excel lists with a SharePoint and Microsoft Lists solution covering an entire department of twelve. The brief was for something modern, but simple enough that everyone could use it without training.
 
-Løsningen erstattet et sett med utdaterte Excel-lister som hadde blitt vanskelige å vedlikeholde og lite egnet for samarbeid. Målet var noe moderne, men enkelt nok til at alle i avdelingen kunne bruke det uten opplæring.
+The work later became the foundation for the modular ticket system the IT team now runs across the organisation.
 
-**Tilnærming:**
+**Approach:**
 
-- Kartla eksisterende arbeidsflyt og smertepunkter med Excel-løsningen
-- Designet en struktur i Microsoft Lists tilpasset saksgangen i ukemøtene
-- Konfigurerte visninger, statuser og filtrering for ulike bruksscenarioer
-- Gjennomførte innføring og sikret at teamet var komfortabelt med løsningen fra dag én
+- Mapped the existing workflow and the pain points of the Excel-based setup
+- Designed a Microsoft Lists structure tailored to how cases moved through the weekly meetings
+- Added automatic metadata, status tracking, and progression through Power Automate
+- Wired up automatic notifications to case owners so nothing fell off anyone's plate
+- Configured views and filters for the different ways the team needed to slice the data
+- Ran the rollout so the team felt comfortable with the new system from day one
 
-**Resultater:**
+**Results:**
 
-- Erstattede fragmenterte Excel-lister med én samlet, søkbar løsning
-- Saksbehandlingen i ukemøtene ble merkbart mer effektiv
-- Svært godt mottatt i avdelingen — tatt i bruk umiddelbart
-- Lavterskel nok til at alle brukte det uten formell opplæring
+- Replaced fragmented Excel sheets with a single, searchable system with full history
+- Lower administrative burden in the weekly meetings — status, progress, and ownership are visible at a glance
+- Very well received in the department; adopted immediately without formal training
+- Later extended into the modular ticket and case-management system used across the organisation

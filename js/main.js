@@ -84,8 +84,8 @@
     const phrases = [
       'Microsoft 365',
       'Power Platform',
-      'tools that solve real problems',
-      'IT that actually ships'
+      'Modern Workplace',
+      'Governance'
     ];
     let i = 0;
 
@@ -145,30 +145,64 @@
       return 3;
     }
 
-    function buildSvgThumb(index) {
-      const svgs = [
+    function buildSvgThumb(p, index) {
+      // Per-project themed illustrations, keyed by frontmatter id
+      const themed = {
+        // Modular ticket and case-management system — central hub with modules around it
+        'modulart-ticketsystem': `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="50" y="32" width="20" height="16" rx="3" fill="currentColor" opacity="0.42"/><rect x="14" y="14" width="22" height="14" rx="2" fill="currentColor" opacity="0.3"/><rect x="84" y="14" width="22" height="14" rx="2" fill="currentColor" opacity="0.3"/><rect x="14" y="52" width="22" height="14" rx="2" fill="currentColor" opacity="0.22"/><rect x="84" y="52" width="22" height="14" rx="2" fill="currentColor" opacity="0.22"/><path d="M36 21 L50 36 M84 21 L70 36 M36 59 L50 44 M84 59 L70 44" stroke="currentColor" stroke-width="1.2" opacity="0.32" fill="none"/><circle cx="60" cy="40" r="2" fill="currentColor" opacity="0.7"/></svg>`,
+
+        // GPO → Intune migration — server rack to cloud-managed device
+        'intune-modernisering': `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="14" y="18" width="22" height="44" rx="2" fill="currentColor" opacity="0.25"/><rect x="18" y="22" width="14" height="3" rx="0.5" fill="currentColor" opacity="0.45"/><rect x="18" y="28" width="14" height="3" rx="0.5" fill="currentColor" opacity="0.4"/><rect x="18" y="34" width="14" height="3" rx="0.5" fill="currentColor" opacity="0.35"/><rect x="18" y="40" width="14" height="3" rx="0.5" fill="currentColor" opacity="0.3"/><circle cx="20" cy="56" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="26" cy="56" r="1.5" fill="currentColor" opacity="0.4"/><path d="M44 40 L72 40 M68 36 L72 40 L68 44" stroke="currentColor" stroke-width="1.6" opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M82 42 Q82 34 90 34 Q92 26 102 28 Q110 26 110 36 Q110 44 102 44 L90 44 Q82 44 82 42 Z" fill="currentColor" opacity="0.32"/><rect x="86" y="52" width="22" height="14" rx="2" fill="currentColor" opacity="0.28"/><rect x="94" y="64" width="6" height="2" fill="currentColor" opacity="0.4"/></svg>`,
+
+        // Case management for weekly meetings — list rows with status pills
+        'saksbehandlingssystem-sharepoint': `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="14" y="13" width="92" height="6" rx="1" fill="currentColor" opacity="0.32"/><rect x="14" y="25" width="92" height="10" rx="1.5" fill="currentColor" opacity="0.16"/><circle cx="20" cy="30" r="2" fill="currentColor" opacity="0.55"/><rect x="26" y="28.5" width="48" height="3" rx="0.5" fill="currentColor" opacity="0.32"/><rect x="86" y="27" width="14" height="6" rx="3" fill="currentColor" opacity="0.42"/><rect x="14" y="39" width="92" height="10" rx="1.5" fill="currentColor" opacity="0.14"/><circle cx="20" cy="44" r="2" fill="currentColor" opacity="0.42"/><rect x="26" y="42.5" width="42" height="3" rx="0.5" fill="currentColor" opacity="0.28"/><rect x="86" y="41" width="14" height="6" rx="3" fill="currentColor" opacity="0.32"/><rect x="14" y="53" width="92" height="10" rx="1.5" fill="currentColor" opacity="0.12"/><circle cx="20" cy="58" r="2" fill="currentColor" opacity="0.35"/><rect x="26" y="56.5" width="36" height="3" rx="0.5" fill="currentColor" opacity="0.24"/><rect x="86" y="55" width="14" height="6" rx="3" fill="currentColor" opacity="0.24"/></svg>`,
+
+        // Real-time marketing — signal waves emanating from a source to recipients
+        'arbeidsflyter-sanntidsmarketing': `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="14" y="32" width="24" height="16" rx="2" fill="currentColor" opacity="0.36"/><path d="M14 33 L26 42 L38 33" stroke="currentColor" stroke-width="1.4" opacity="0.6" fill="none" stroke-linejoin="round"/><path d="M46 40 Q56 30 66 40 Q56 50 46 40" stroke="currentColor" stroke-width="1.6" opacity="0.42" fill="none"/><path d="M56 40 Q70 24 84 40 Q70 56 56 40" stroke="currentColor" stroke-width="1.4" opacity="0.28" fill="none"/><path d="M66 40 Q84 18 102 40 Q84 62 66 40" stroke="currentColor" stroke-width="1.2" opacity="0.18" fill="none"/><circle cx="100" cy="26" r="2.5" fill="currentColor" opacity="0.42"/><circle cx="108" cy="40" r="2.5" fill="currentColor" opacity="0.5"/><circle cx="100" cy="54" r="2.5" fill="currentColor" opacity="0.42"/></svg>`,
+
+        // Power Apps + Power BI dashboard — KPI tiles + bar chart + line chart
+        'power-apps-power-bi-mal': `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="14" y="13" width="20" height="14" rx="2" fill="currentColor" opacity="0.32"/><rect x="38" y="13" width="20" height="14" rx="2" fill="currentColor" opacity="0.26"/><rect x="62" y="13" width="20" height="14" rx="2" fill="currentColor" opacity="0.2"/><rect x="86" y="13" width="20" height="14" rx="2" fill="currentColor" opacity="0.18"/><rect x="14" y="33" width="44" height="34" rx="2" fill="currentColor" opacity="0.08"/><rect x="20" y="54" width="6" height="10" fill="currentColor" opacity="0.45"/><rect x="28" y="48" width="6" height="16" fill="currentColor" opacity="0.45"/><rect x="36" y="44" width="6" height="20" fill="currentColor" opacity="0.45"/><rect x="44" y="38" width="6" height="26" fill="currentColor" opacity="0.45"/><rect x="62" y="33" width="44" height="34" rx="2" fill="currentColor" opacity="0.08"/><path d="M66 60 L74 50 L82 54 L90 44 L98 48 L102 40" stroke="currentColor" stroke-width="1.6" opacity="0.55" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="74" cy="50" r="1.5" fill="currentColor" opacity="0.6"/><circle cx="90" cy="44" r="1.5" fill="currentColor" opacity="0.6"/></svg>`
+      };
+
+      if (p && p.id && themed[p.id]) return themed[p.id];
+
+      // Fallback set for unknown projects
+      const fallback = [
         `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="20" y="14" width="36" height="52" rx="4" fill="currentColor" opacity="0.25"/><rect x="26" y="22" width="24" height="4" fill="currentColor" opacity="0.4"/><rect x="26" y="32" width="16" height="4" fill="currentColor" opacity="0.3"/><rect x="26" y="42" width="20" height="4" fill="currentColor" opacity="0.3"/><rect x="70" y="20" width="36" height="8" fill="currentColor" opacity="0.2"/><rect x="70" y="34" width="36" height="8" fill="currentColor" opacity="0.15"/><rect x="70" y="48" width="24" height="8" fill="currentColor" opacity="0.1"/></svg>`,
         `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><circle cx="24" cy="24" r="7" fill="currentColor" opacity="0.35"/><circle cx="60" cy="24" r="7" fill="currentColor" opacity="0.35"/><circle cx="96" cy="24" r="7" fill="currentColor" opacity="0.35"/><circle cx="42" cy="56" r="7" fill="currentColor" opacity="0.35"/><circle cx="78" cy="56" r="7" fill="currentColor" opacity="0.35"/><path d="M31 24 L53 24 M67 24 L89 24 M27 30 L38 50 M49 56 L71 56 M83 50 L92 30 M65 30 L45 50" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>`,
         `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="14" y="20" width="40" height="12" rx="6" fill="currentColor" opacity="0.2"/><rect x="66" y="36" width="40" height="12" rx="6" fill="currentColor" opacity="0.3"/><rect x="14" y="52" width="50" height="12" rx="6" fill="currentColor" opacity="0.2"/><circle cx="100" cy="22" r="6" fill="currentColor" opacity="0.4"/></svg>`,
         `<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="80" fill="currentColor" opacity="0.06"/><rect x="10" y="30" width="20" height="40" rx="3" fill="currentColor" opacity="0.3"/><rect x="36" y="18" width="20" height="52" rx="3" fill="currentColor" opacity="0.25"/><rect x="62" y="24" width="20" height="46" rx="3" fill="currentColor" opacity="0.2"/><rect x="88" y="10" width="20" height="60" rx="3" fill="currentColor" opacity="0.35"/></svg>`
       ];
-      return svgs[index % svgs.length];
+      return fallback[index % fallback.length];
     }
+
+    // Per-project accent colours, drawn from the dominant Microsoft tech.
+    // Used to set --project-color on each card; CSS picks it up for thumb,
+    // tag chips, hover border, and shadow.
+    const projectColors = {
+      'modulart-ticketsystem':            '#8b5cf6', // Power Platform violet
+      'intune-modernisering':             '#06b6d4', // Intune cyan
+      'saksbehandlingssystem-sharepoint': '#14b8a6', // SharePoint teal
+      'arbeidsflyter-sanntidsmarketing':  '#ec4899', // Marketing pink
+      'power-apps-power-bi-mal':          '#f59e0b'  // Power BI amber
+    };
 
     function renderCard(p, idx) {
       const tags = (p.tags || []).slice(0, 4).map(t => `<li>${t}</li>`).join('');
       const meta = [p.role, p.period].filter(Boolean).join('  ·  ');
       const excerpt = p.excerpt || p.summary || '';
+      const color = projectColors[p.id] || '';
+      const styleAttr = color ? ` style="--project-color: ${color}"` : '';
       return `
-        <article class="project-card reveal">
-          <div class="project-thumb" aria-hidden="true">${buildSvgThumb(idx)}</div>
+        <article class="project-card reveal"${styleAttr}>
+          <div class="project-thumb" aria-hidden="true">${buildSvgThumb(p, idx)}</div>
           <div class="project-body">
             <h3>${p.title}</h3>
             ${meta ? `<p class="project-card-meta">${meta}</p>` : ''}
             <p>${excerpt}</p>
             <ul class="tag-list small">${tags}</ul>
             <div class="project-links">
-              <a href="projects/index.html">Se alle prosjekter →</a>
+              <a href="projects/index.html">View all projects →</a>
             </div>
           </div>
         </article>`;

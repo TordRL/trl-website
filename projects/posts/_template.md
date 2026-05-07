@@ -1,6 +1,6 @@
 ---
 title: (Project title)
-role: (Prosjektleder, Konsulent, IT-koordinator)
+role: (Project Lead, Consultant, IT Coordinator)
 period: (Jan 2024 – Jun 2024)
 tags: []
 featured: false
@@ -15,7 +15,7 @@ FIELD GUIDE
 ───────────
 title    : Displayed as the project heading on the website
 role     : Your role on the project
-period   : Free-text date range — shown next to role ("Rolle / Periode")
+period   : Free-text date range — shown next to role ("Role / Period")
 tags     : Shown as filter chips — e.g. [Power Apps, SharePoint, Teams]
 featured : true = included in homepage carousel rotation
 year     : Used for sorting when sort is equal
@@ -39,11 +39,11 @@ WORKFLOW
 
 <!-- Optional structured sections you can use:
 
-**Problembeskrivelse:** What was the situation before?
+**Problem:** What was the situation before?
 
-**Tilnærming:** How did you approach it?
+**Approach:** How did you approach it?
 
-**Resultater:**
+**Results:**
 - Key outcome with number
 - Another measurable result
 

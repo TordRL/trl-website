@@ -10,17 +10,27 @@ Plain HTML, CSS, and JS. No build step, no dependencies (except the Google fonts
 ├── css/
 │   └── styles.css            # all styles, light + dark themes
 ├── js/
-│   ├── main.js               # theme toggle, nav, reveal animations, contact form
+│   ├── main.js               # theme toggle, nav, reveal animations, hero rotator, projects carousel, contact form
+│   ├── projects.js           # renders the full /projects page from projects-data.js
+│   ├── projects-data.js      # generated bundle of project posts (built from projects/posts/*.md)
 │   └── blog.js               # markdown blog loader
 ├── blog/
 │   ├── index.html            # full blog listing
 │   ├── post.html             # reads ?slug=<slug> and renders a post
 │   └── posts/
 │       ├── posts.json        # index of posts (edit this when you add one)
-│       ├── hello-world.md
-│       └── on-building-small.md
-└── projects/
-    └── sample-project.html   # case study template
+│       ├── blog-data.js      # bundled post data for file:// loading
+│       └── *.md              # individual post bodies
+├── projects/
+│   ├── index.html            # full projects page (renders from projects-data.js)
+│   ├── sample-project.html   # case study template
+│   ├── projects.json         # index of projects
+│   └── posts/
+│       ├── _template.md      # starting point for new project entries
+│       └── *.md              # individual project case studies
+├── data/                     # supporting data (e.g. profile fields used by build scripts)
+├── build-projects.py         # compiles projects/posts/*.md → js/projects-data.js
+└── generate-cv.py            # CV generation helper
 ```
 
 ## Running it locally
